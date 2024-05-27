@@ -55,6 +55,11 @@ def param_gate(theta: float):
 
 @cudaq.kernel
 def param_q(n: int):
+    """circuit with parametrized qubit number
+
+    Args:
+        n (int): number of qubits.
+    """
     q = cudaq.qvector(n)
     h(q[0])
     for jj in range(n - 1):
